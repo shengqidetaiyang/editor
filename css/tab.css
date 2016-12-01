@@ -1,0 +1,127 @@
+/* 
+* @Author: Marte
+* @Date:   2016-11-23 17:54:58
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-11-25 11:34:01
+*/
+.tab_wrap{
+    position:absolute;
+    left:100px;
+    top:100px;
+    width:200px;
+    height:150px;
+}
+.tab_box{
+    position:relative;
+    width:200px;
+    height:150px;
+    overflow: hidden;
+    cursor:move;
+    -webkit-touch-callout: none;  
+    -webkit-user-select: none;  
+    -khtml-user-select: none;  
+    -moz-user-select: none;  
+    -ms-user-select: none;  
+    user-select: none; 
+}
+.tab_box .inner{
+    position:absolute;
+    top:0;
+    left:0;
+    width:1000px;
+    height:150px;
+}
+.tab_box .inner .list{
+    width:200px;
+    height:150px;
+    float:left;
+}
+.tab_box .inner .list .meng{
+    display: inline-block;
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, 0.5);
+    text-align:center;
+    line-height:150px;
+    font-family: Microsoft;
+    color:white;
+    font-weight: bold;
+    cursor:pointer;
+}
+.tab_box .inner .list img{
+    width:100%;
+}
+.tab_box .go_left{
+    position:absolute;
+    left:0;
+    top:0;
+    width:26px;
+    height:150px;
+    background:url(../img/pre.png) center center no-repeat;
+    background-size:25px 50px;
+    cursor:pointer;
+}
+.tab_box .go_right{
+    position:absolute;
+    right:0;
+    top:0;
+    width:26px;
+    height:150px;
+    background:url(../img/next.png) center center no-repeat;
+    background-size:25px 50px;
+    cursor:pointer;
+}
+.tab_wrap .plus,.tab_wrap .minus,.tab_wrap .del{
+    position:absolute;
+    height:30px;
+    width:30px;
+    cursor:pointer;
+    top:-32px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    background:url(../img/plus.png) center center no-repeat;
+    background-size:60% 60%;
+    border-right:none;
+    background-color:#fff;
+}
+.tab_wrap .minus{
+    left:31px;
+    background:url(../img/minus.png) center center no-repeat;
+    background-size:60% 60%;
+    background-color:#fff;
+}
+.tab_wrap .del{
+    left:62px;
+    border-right:1px solid rgba(0, 0, 0, 0.2);
+    background:url(../img/del.png) center center no-repeat;
+    background-size:60% 60%;
+    background-color:#fff;
+}
+.tab_wrap .list1{
+    background:url(../img/1.jpg) top center no-repeat;
+    background-size:100% 100%;
+}
+.tab_wrap .list2{
+    background:url(../img/2.jpg) top center no-repeat;
+    background-size:100% 100%;    
+}
+.tab_wrap .list3{
+    background:url(../img/3.jpg) top center no-repeat;
+    background-size:100% 100%;    
+}
+.tab_wrap .list4{
+    background:url(../img/4.jpg) top center no-repeat;
+    background-size:100% 100%;    
+}
+.tab_wrap .list5{
+    background:url(../img/5.jpg) top center no-repeat;
+    background-size:100% 100%;    
+}
+.tab_wrap .move{
+    width:66px;
+    height:37px;
+    position:absolute;
+    left:67px;
+    background:url(../img/move.png) center center no-repeat;
+    background-size:100% 100%;
+    cursor:move;
+}

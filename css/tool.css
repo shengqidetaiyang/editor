@@ -1,0 +1,555 @@
+/* 
+* @Author: Marte
+* @Date:   2016-11-23 16:05:36
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-11-30 19:10:27
+*/
+        .wrap{
+            cursor:move;
+            position:absolute;
+            top:50%;
+            left:45%;
+            width:200px;
+            height:50px;
+            min-width:100px;
+            border:1px dashed rgba(16,130,120,1);
+        }
+        .wrap .nw,.wrap .ne,.wrap .sw,.wrap .se{
+            position:absolute;
+            width:6px;
+            height:6px;
+            border-radius:50%;
+            border:1px solid gray;
+            background-color: white;
+        }
+        .wrap .n,.wrap .w,.wrap .e,.wrap .s{
+            position:absolute;
+            width:6px;
+            height:6px;
+            border:1px solid gray;
+            background-color: white;           
+        }
+        .wrap .nw{
+            left:-5px;
+            top:-5px;
+            cursor:nw-resize;
+        }
+        .wrap .ne{
+            right:-5px;
+            top:-5px;
+            cursor:ne-resize;
+        }
+        .wrap .sw{
+            bottom:-5px;
+            left:-5px;
+            cursor:sw-resize;
+        }
+        .wrap .se{
+            right:-5px;
+            bottom:-5px;
+            cursor:se-resize;
+        }
+        .wrap .n{
+            top:-5px;
+            left:95px;
+            cursor:n-resize;
+        }
+        .wrap .e{
+            top:20px;
+            right:-5px;
+            cursor:e-resize;
+        }
+        .wrap .w{
+            left:-5px;
+            top:20px;
+            cursor:w-resize;
+        }
+        .wrap .s{
+            bottom:-5px;
+            left:95px;
+            cursor:s-resize;
+        }
+            .img_box{
+                cursor:move;
+                position:absolute;
+                top:50%;
+                left:45%;
+                width:200px;
+                height:150px;
+                border:1px dashed rgba(16,130,120,0);    
+                background:url(../img/1.jpg) center center no-repeat;
+                background-size:98% 98%;
+                -webkit-touch-callout: none;  
+                -webkit-user-select: none;  
+                -khtml-user-select: none;  
+                -moz-user-select: none;  
+                -ms-user-select: none;  
+                user-select: none;     
+                min-width:40px;       
+            }
+        .img_box .nw,.img_box .ne,.img_box .sw,.img_box .se{
+            position:absolute;
+            width:6px;
+            height:6px;
+            border-radius:50%;
+            border:1px solid gray;
+            background-color: #2af50a ;
+        }
+        .img_box .n,.img_box .w,.img_box .e,.img_box .s{
+            position:absolute;
+            width:6px;
+            height:6px;
+            border:1px solid gray;
+            background-color: #2af50a ;           
+        }
+        .img_box .nw{
+            left:-5px;
+            top:-5px;
+            cursor:nw-resize;
+        }
+        .img_box .ne{
+            right:-5px;
+            top:-5px;
+            cursor:ne-resize;
+        }
+        .img_box .sw{
+            bottom:-5px;
+            left:-5px;
+            cursor:sw-resize;
+        }
+        .img_box .se{
+            right:-5px;
+            bottom:-5px;
+            cursor:se-resize;
+        }
+        .img_box .n{
+            top:-5px;
+            left:95px;
+            cursor:n-resize;
+        }
+        .img_box .e{
+            top:70px;
+            right:-5px;
+            cursor:e-resize;
+        }
+        .img_box .w{
+            left:-5px;
+            top:70px;
+            cursor:w-resize;
+        }
+        .img_box .s{
+            bottom:-5px;
+            left:95px;
+            cursor:s-resize;
+        }
+            .img_box:hover{
+                border:1px dashed rgba(16,130,120,1);                
+            }
+            .img_box img{
+                width:100%;
+            }
+            .wrap .edit_text{
+                width:100%;
+                outline:none;
+                text-align: center;
+            }
+            .wrap .bac_col{
+                position:absolute;
+                height:30px;
+                width:30px;
+                cursor:pointer;
+                top:-33px;
+                left:63px;
+                border:1px solid rgba(0, 0, 0, 0.2);
+                border-left:none;
+                background-color:#fff;
+            }
+            .edit_text{
+                text-align:left;
+            }
+            .wrap .tips,.img_box .tips,.button_box .tips{
+                position:absolute;
+                height:30px;
+                width:30px;
+                cursor:pointer;
+                top:-33px;
+                border:1px solid rgba(0, 0, 0, 0.2);
+                background:url(../img/editor.png) center center no-repeat;
+                background-size:60% 60%;
+                border-right:none;
+                background-color:#fff;
+            }
+            .img_box .tips{
+                background:url(../img/img_change.png) center center no-repeat;    
+                background-color:white;            
+            }
+            .wrap .del,.img_box .del,.button_box .del{
+                position:absolute;
+                height:30px;
+                width:30px;
+                background:url(../img/del.png) center center no-repeat;
+                background-size:60% 60%;
+                cursor:pointer;
+                top:-33px;
+                border:1px solid rgba(0, 0, 0, 0.2);
+                left:31px;
+                background-color:#fff;
+            }
+            .button_box .bac_col{
+                position:absolute;
+                height:30px;
+                width:30px;
+                cursor:pointer;
+                top:-33px;
+                border:1px solid rgba(0, 0, 0, 0.2);
+                border-left:none;
+                left:63px;
+                background-color:#fff;                
+            }
+            .button_box .nw,.button_box .ne,.button_box .sw,.button_box .se{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border-radius:50%;
+                border:1px solid gray;
+                background-color: white;
+            }
+            .button_box .n,.button_box .w,.button_box .e,.button_box .s{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border:1px solid gray;
+                background-color: white;           
+            }
+            .button_box .nw{
+                left:-4px;
+                top:-4px;
+                cursor:nw-resize;
+            }
+            .button_box .ne{
+                right:-4px;
+                top:-4px;
+                cursor:ne-resize;
+            }
+            .button_box .sw{
+                bottom:-4px;
+                left:-4px;
+                cursor:sw-resize;
+            }
+            .button_box .se{
+                right:-4px;
+                bottom:-4px;
+                cursor:se-resize;
+            }
+            .button_box .n{
+                top:-4px;
+                left:95px;
+                cursor:n-resize;
+            }
+            .button_box .e{
+                top:20px;
+                right:-4px;
+                cursor:e-resize;
+            }
+            .button_box .w{
+                left:-4px;
+                top:20px;
+                cursor:w-resize;
+            }
+            .button_box .s{
+                bottom:-4px;
+                left:95px;
+                cursor:s-resize;
+            }
+            .editor_box,.editor_button{
+                background-color:white;
+                position:absolute;
+                top:-38px;
+                left:0;
+                width:415px;
+                height:30px;
+                border:1px solid rgba(0, 0, 0, 0.2);
+                /*display:none;*/
+                -webkit-touch-callout: none;  
+                -webkit-user-select: none;  
+                -khtml-user-select: none;  
+                -moz-user-select: none;  
+                -ms-user-select: none;  
+                user-select: none;  
+            }
+            .editor_box>div,.editor_button>div{
+                position:relative;
+                float:left;
+                width:30px;
+                height:30px;
+                text-align: center;
+                line-height: 30px;
+                font-size:16px;
+                cursor:pointer;
+                outline:none;
+                box-sizing: border-box;
+            }
+            .editor_button{
+                top:-33px;
+                width:495px;
+            }
+            .editor_button .link{
+                background:url(../img/link.png) center center no-repeat;
+                background-size:60% 60%;
+                border-left:1px solid rgba(0, 0, 0, 0.2);
+            }
+            .editor_box>.bold,.editor_button>.bold{
+                width:30px;
+                background:url(../img/bold.png) center center no-repeat;
+                background-size:38% 38%;
+            }
+            .editor_box>.italic{
+                width:30px;
+                background:url(../img/italic.png) center center no-repeat;
+                background-size:38% 38%;
+            }
+            .editor_box .go_left{
+                background:url(../img/left.png) center center no-repeat;
+                background-size:38% 38%;                
+            }
+            .editor_box .go_center{
+                background:url(../img/middle.png) center center no-repeat;
+                background-size:38% 38%;                
+            }
+            .editor_box .go_right{
+                background:url(../img/right.png) center center no-repeat;
+                background-size:38% 38%;                
+            }
+            .editor_box>div select,.editor_button>div select{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                /*border:none;*/
+                /*outline:none;*/
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            .editor_box>div select option,.editor_button>div select{
+                outline:none;
+                border:none;
+                margin:0;
+                padding:0;                
+            }
+            .resize{
+                position:absolute;
+                right:0;
+                bottom:0;
+                width:10px;
+                height:100%;
+                /*background-color:gray;*/
+                cursor:e-resize;
+            }
+            .resize_y{
+                position:absolute;
+                width:100%;
+                height:10px;
+                left:0;
+                bottom:0;
+                cursor:s-resize;
+            }
+            .resize_z{
+                position:absolute;
+                width:20px;
+                height:20px;
+                right:0;
+                bottom:0;
+                cursor:se-resize;    
+                background:url(../img/right_down.png) center center no-repeat;
+                background-size:60% 60%;            
+            }
+            .editor_box>.col,.editor_button>.col{
+                width:30px;
+                height:30px;
+            }
+            .editor_box>.col input,.editor_button>.col input{
+                width:20px;
+                height:20px;
+                border-radius:50%;
+            }
+            .bac_color{
+                position:absolute;
+                left:2px;
+                top:3px;
+                width:20px;
+                height:20px;
+                border-radius:50%;    
+                cursor:pointer;            
+            }
+            .editor_box>.font_size{
+                width:55px;
+                border-left:1px solid rgba(0, 0, 0, 0.2);
+            }
+            .editor_button>.font_size{
+                width:55px;
+                border-left:1px solid rgba(0, 0, 0, 0.2);               
+            }
+            .editor_button>.style{
+                width:70px;
+                border-left:1px solid rgba(0, 0, 0, 0.2);                     
+            }
+            .editor_box>.font,.editor_button>.font{
+                width:180px;
+                border-left:1px solid rgba(0, 0, 0, 0.2);
+            }
+            .editor_box input,.editor_button input,.bac_col input{
+                border:none;
+                outline:none;
+            }
+            .editor_box select,.editor_button select{
+                border:none;
+                outline:none;
+            }
+            .wrap_text{
+                outline:none;
+            }
+            .create_module{
+                width:60px;
+                height:60px;
+                position:fixed;
+                left:112px;
+                top:50%;
+                margin-top:-30px;
+                background:url(../img/create_module.png) center center no-repeat;
+                cursor:pointer; 
+                border-radius: 15%;
+            }
+            .create{
+                padding:0;
+                margin:0;
+                list-style:none;
+                height:80px;
+                border:1px dashed rgba(122, 122, 122, 1.0);  
+                background-color:#fff;
+                position:fixed;
+                left:5px;
+                top:525px;
+                display:none;
+            }
+            .create .forth{
+                margin-right:20px;
+            }
+            .create li{
+                width:60px;
+                float:left;
+                cursor:pointer;
+                margin-right:10px;
+            }
+            .create .close{
+                position:absolute;
+                width:30px;
+                height:30px;
+                top:0;
+                right:0;
+                background:url(../img/close_red.png) center center no-repeat;
+                background-size:50% 50%;
+                cursor:pointer;
+            }
+            .create li>div{
+                width:60px;
+                height:60px;
+            }
+            .create li p{
+                padding:0;
+                margin:0;
+                font-size:12px;
+                text-align: center;
+            }
+            .create .first div{
+                background:url(../img/text.png) center center no-repeat;
+                background-size:60% 60%;
+            }
+            .create .second div{
+                background:url(../img/img.png) center center no-repeat;
+                background-size:60% 60%;
+            }
+            .create .third div{
+                background:url(../img/button.png) center center no-repeat;
+                background-size:60% 60%;
+            }
+            .create .forth div{
+                background:url(../img/tab.png) center center no-repeat;
+                background-size:60% 60%;
+            }
+            .button_box{
+                position:absolute;
+                top:200px;
+                left:200px;
+                width:200px;
+                height:50px;
+                border:1px dashed black;
+                min-width:60px;
+            }
+            .button_box>a{
+                display:inline-block;
+                width:100%;
+                height:100%;
+                background-color:rgba(100,200,250,1);
+                text-decoration:none;
+                line-height:50px;
+                font-size:20px;
+                text-align:center;
+                border:1px solid gray;
+            }
+            .cover{
+                position:fixed;
+                width:100%;
+                height:100%;
+                left:0;
+                top:0;
+                background-color: rgba(0, 0, 0, 0.5);
+                display:none;
+                z-index:10000;
+            }
+            .link_list{
+                position:fixed;
+                width:200px;
+                height:150px;
+                left:50%;
+                top:50%;
+                margin-left:-100px;
+                margin-top:-100px;
+                background-color: #fff;
+                display:none;
+                z-index:10001;
+            }
+            .link_list p{
+                margin-top:30px;
+                font-size:20px;
+                text-align: center;
+            }
+            .link_list select{
+                width:100%;
+                font-size:15px;
+            }
+            .link_list .close{
+                position:absolute;
+                top:0;
+                right:0;
+                width:30px;
+                height: 30px;
+                background:url(../img/close_red.png) center center no-repeat;
+                background-size:50% 50%;
+                cursor:pointer;
+            }
+            .link_list .confirm{
+                position:absolute;
+                right:5px;
+                bottom:5px;
+                width:80px;
+                height:30px;
+                line-height:30px;
+                text-align: center;
+                font-size:16px;
+                border-radius:5px;
+                background-color: blue;
+                color:#fff;
+                cursor:pointer;
+            }
