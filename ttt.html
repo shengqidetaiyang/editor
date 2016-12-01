@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/tool.css" />
+        <link rel="stylesheet" type="text/css" href="css/tab.css" />
+        <style type="text/css">
+            #ttt{
+                position:relative;
+            }
+            .tab_wrap .move{
+                display:none;
+            }
+            .plus,.minus,.del,#ttt .meng{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="ttt"></div>
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript">
+        $("#ttt").html(decodeUTF8(localStorage.getItem("abc")));
+        $(".inner").css({"left":0});
+            var index = [];
+            var a = [];
+            var b = [];
+            var c = [];
+            var time_tar = [];
+            var timer = [];
+            var lens = $(".tab_wrap").length;
+            var d = [];
+            function pre(m){
+                index[m]--;
+                if(index[m] < 0){
+                    index[m] = c[m];
+                }  
+            }
+            function next(n){
+                index[n]++;
+                if(index[n] > c[n]){
+                    index[n] = 0;
+                } 
+                console.log("index"+ n,index[n]);
+            }
+            for(var i = 0;i < lens;i++){
+                 a[i] = parseInt($(".tab_wrap").eq(i).attr("data-a"));
+                 b[i] = parseInt($(".tab_wrap").eq(i).attr("data-b"));
+                 c[i] = parseInt($(".tab_wrap").eq(i).attr("data-c")); 
+                 index[i] = 0;               
+            }
+
+
+            function encodeUTF8(str){
+            var temp = "",rs = "";
+            for( var i=0 , len = str.length; i < len; i++ ){
+                temp = str.charCodeAt(i).toString(16);
+                rs  += "\\u"+ new Array(5-temp.length).join("0") + temp;
+            }
+                return rs;
+            }
+             function decodeUTF8(str){
+                return str.replace(/(\\u)(\w{4}|\w{2})/gi, function($0,$1,$2){
+                    return String.fromCharCode(parseInt($2,16));
+                }); 
+             }        
+            
+                $(".tab_wrap").find(".go_left").on("click",function(){
+                    var num = parseInt($(this).parent().parent().attr("data-id"));
+                    pre(num);
+                    $(this).parent().parent().find(".inner").stop().animate({"left":-index[num] * a[num] + "px"});
+                }) 
+                $(".tab_wrap").find(".go_right").on("click",function(){
+                    var num = parseInt($(this).parent().parent().attr("data-id"));
+                    next(num);
+                    $(this).parent().parent().find(".inner").stop().animate({"left":-index[num] * a[num] + "px"});
+                }) 
+            
+    $(".tab_wrap").hover(
+            function(){
+                var num = parseInt($(this).attr("data-id"));
+                $(this).find(".go_left").show();
+                $(this).find(".go_right").show();
+                clearInterval(timer[num]);
+            },
+            function(){
+                var num = parseInt($(this).attr("data-id"));
+                $(this).find(".go_left").hide();
+                $(this).find(".go_right").hide();
+                time_tar[num] = this;
+                    timer[num] = setInterval(function(){
+                    next(num);
+                    $(time_tar[num]).find(".inner").animate({"left":-index[num] * a[num] + "px"});
+                },2000);       
+            }  
+        );
+    for(var j = 0;j < lens;j++){
+                                settime(j);       
+    }
+    function settime(t){
+                        timer[t] = setInterval(function(){
+                            next(t);
+                            $(".tab_wrap").eq(t).find(".inner").animate({"left":-index[t] * a[t] + "px"});
+                        },2000);   
+    }
+
+        </script>
+    </body>
+</html>

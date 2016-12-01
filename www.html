@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/tool.css" />
+        <link rel="stylesheet" type="text/css" href="css/tab.css" />
+        <style type="text/css">
+            #www{
+                position:relative;
+            }
+        </style>
+    </head>
+    <body>
+            <div class="cover"></div>
+            <div class="link_list">
+                <span class = "close"></span>
+                <span class = "confirm">确认</span>
+                <p>请选择链接</p>
+                <select class="link_sel">
+                    <option value="http://www.baidu.com">链接一</option>
+                    <option value="http://www.jd.com">链接二</option>
+                </select>
+            </div>
+            <button class = "save">保存</button>
+            <div class="create_module"></div>
+                <ul class="create">
+                    <li class="first">
+                        <div></div>
+                        <p>文本</p>
+                    </li>
+                    <li class="second">
+                        <div></div>
+                        <p>图片</p>
+                    </li>
+                    <li class="third">
+                        <div></div>
+                        <p>按钮</p>
+                    </li>
+                    <li class="forth">
+                        <div></div>
+                        <p>轮播多图</p>
+                    </li>
+                    <div class="close"></div>
+                </ul>
+            <div id="www"></div>
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/tool.js"></script>
+        <script type="text/javascript" src="js/tab.js"></script>
+        <script type="text/javascript">
+            $(".create_module").on("click",function(){
+                $(".create").slideDown();
+            })
+            $(".create .close").on("click",function(){
+                $(".create").slideUp();
+            }) 
+            $(".cover").on("click",function(){
+                $(this).hide();
+                $(".link_list").hide();
+            })
+            $(".close").on("click",function(){
+                $(this).parent().hide();
+                $(".cover").hide();
+                $(".add").removeClass('add');
+            })  
+            $(".confirm").on("click",function(){
+                var link = $(".link_sel").find("option:selected").val();
+                $(this).parent().hide();
+                $(".cover").hide();
+                $(".add").find("a").attr("href",link);
+                $(".add").removeClass('add');
+            })             
+        </script>
+    </body>
+</html>
